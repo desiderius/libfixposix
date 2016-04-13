@@ -96,7 +96,6 @@ dnl Checks for types
 dnl Configuration switches
 # LFP_ARG_ENABLE_EMULATED_SIGNALFD
 
-LFP_TESTS_CHECK
 
 AC_CONFIG_FILES([Makefile
                  src/libfixposix.pc
