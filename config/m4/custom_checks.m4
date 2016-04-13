@@ -1,22 +1,5 @@
 # -*- Autoconf -*-
 
-AC_DEFUN([LFP_TESTS_CHECK], [
-AC_ARG_ENABLE([tests],
-  [AS_HELP_STRING([--enable-tests],
-    [enable test suite using CHECK @<:@default=no@:>@])],
-  [],
-  [enable_tests=no])
-AS_CASE($enable_tests,
-  [yes], [PKG_CHECK_MODULES([CHECK], [check >= 0.9.4])
-          AC_SUBST([CHECK_CFLAGS])
-          AC_SUBST([CHECK_LIBS])],
-  [no], [],
-  AC_MSG_ERROR(
-    [--enable-tests was given an illegal value: "$enable_tests"])
-)
-AM_CONDITIONAL(TESTS, test x$enable_tests = xyes)
-])
-
 AC_DEFUN([LFP_INIT], [
  LFP_CFLAGS=""
  LFP_LDFLAGS=""
